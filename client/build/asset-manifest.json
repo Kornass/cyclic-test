@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41e0e0e4.css",
+    "main.js": "/static/js/main.7da91049.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/spagetti.png": "/static/media/spagetti.04818cdcdf54621a1592.png",
+    "static/media/torta.png": "/static/media/torta.8a20ed0c8ba1078b0903.png",
+    "static/media/homeImage1.jpg": "/static/media/homeImage1.a4f2db40492d900d8d26.jpg",
+    "static/media/candado.png": "/static/media/candado.df320d1881bbdbd05f25.png",
+    "static/media/email.png": "/static/media/email.6e99a7814854c2952b40.png",
+    "static/media/iconoPersona.png": "/static/media/iconoPersona.c99a1e63e8af75bf3f2e.png",
+    "static/media/logoFoodies.png": "/static/media/logoFoodies.1dba5ee3f6d0526c0b66.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.41e0e0e4.css.map": "/static/css/main.41e0e0e4.css.map",
+    "main.7da91049.js.map": "/static/js/main.7da91049.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41e0e0e4.css",
+    "static/js/main.7da91049.js"
+  ]
+}
