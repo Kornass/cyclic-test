@@ -1,31 +1,40 @@
-const express = require('express'),
-    app = express(),
-    mongoose = require('mongoose') 
-require("dotenv").config()
-mongoose.set('debug',true)
+const express = require("express"),
+  app = express(),
+  mongoose = require("mongoose");
+require("dotenv").config();
+mongoose.set("debug", true);
 
-app.use(express.urlencoded({extended:true}))
-app.use(express.json())
-app.use(require("cors")())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(require("cors")());
 
-async function connecting(){
-    try {
+const path = require("path");
 
-        await mongoose.connect(process.env.MONGO)
-        console.log('Connected to the DB')
-    } catch ( error ) {
-        console.log('ERROR: Seems like your DB is not running, please start it up !!!');
-    }
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
+
+async function connecting() {
+  try {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Connected to the DB");
+  } catch (error) {
+    console.log(
+      "ERROR: Seems like your DB is not running, please start it up !!!"
+    );
+  }
 }
-connecting()
+connecting();
 
-app.use('/customer', require('./routes/customerRoute'))
-app.use('/restaurant', require('./routes/restaurantRoute'))
-app.use('/menu', require('./routes/menuRoute'))
-app.use('/verify_token', require('./routes/verify_token'))
-app.use('/order', require('./routes/orderRoute'))
-app.use('/payment', require('./routes/paymentRoute'));
-app.use("/pictures", require("./routes/picturesRoute"))
+app.use("/customer", require("./routes/customerRoute"));
+app.use("/restaurant", require("./routes/restaurantRoute"));
+app.use("/menu", require("./routes/menuRoute"));
+app.use("/verify_token", require("./routes/verify_token"));
+app.use("/order", require("./routes/orderRoute"));
+app.use("/payment", require("./routes/paymentRoute"));
+app.use("/pictures", require("./routes/picturesRoute"));
 
-
-app.listen(4000, () => console.log(`listening on port 4000`))
+app.listen(4000, () => console.log(`listening on port 4000`));
